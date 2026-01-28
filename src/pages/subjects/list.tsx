@@ -74,7 +74,7 @@ function SubjectsList() {
         size: 150,
         header: () => <p>Description</p>,
         cell: ({ getValue }) => (
-          <p className="line-clamp-2 truncate">{getValue<string>()}</p>
+          <p className="truncate">{getValue<string>()}</p>
         ),
       },
     ],

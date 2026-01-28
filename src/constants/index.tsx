@@ -4,6 +4,7 @@ export const DEPARTMENTS = [
   "Computer Science",
   "Mathematics",
   "Physics",
+  "Electrical Engineering",
   "Chemistry",
   "Biology",
 ];
