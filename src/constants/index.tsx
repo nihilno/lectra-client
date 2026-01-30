@@ -1,16 +1,15 @@
 import { getEnvVar } from "@/lib/utils";
-import { Subject } from "@/types";
 export const BACKEND_BASE_URL = getEnvVar("VITE_BACKEND_BASE_URL");
+export const CLOUDINARY_UPLOAD_URL = getEnvVar("VITE_CLOUDINARY_UPLOAD_URL");
+export const CLOUDINARY_CLOUD_NAME = getEnvVar("VITE_CLOUDINARY_CLOUD_NAME");
+export const CLOUDINARY_UPLOAD_PRESET = getEnvVar(
+  "VITE_CLOUDINARY_UPLOAD_PRESET",
+);
 
-// export const CLOUDINARY_UPLOAD_URL = getEnvVar("VITE_CLOUDINARY_UPLOAD_URL");
-// export const CLOUDINARY_CLOUD_NAME = getEnvVar("VITE_CLOUDINARY_CLOUD_NAME");
 // export const BASE_URL = import.meta.env.VITE_API_URL;
 // export const ACCESS_TOKEN_KEY = import.meta.env.VITE_ACCESS_TOKEN_KEY;
 // export const REFRESH_TOKEN_KEY = import.meta.env.VITE_REFRESH_TOKEN_KEY;
 // export const REFRESH_TOKEN_URL = `${BASE_URL}/refresh-token`;
-// export const CLOUDINARY_UPLOAD_PRESET = getEnvVar(
-//   "VITE_CLOUDINARY_UPLOAD_PRESET",
-// );
 
 export const DEPARTMENTS = [
   "Computer Science",
@@ -67,71 +66,3 @@ export const DEPARTMENTS = [
 //   "image/jpg",
 //   "image/webp",
 // ];
-
-// export const teachers = [
-//   {
-//     id: "1",
-//     name: "John Doe",
-//   },
-//   {
-//     id: "2",
-//     name: "Jane Smith",
-//   },
-//   {
-//     id: "3",
-//     name: "Dr. Alan Turing",
-//   },
-// ];
-
-// export const subjects = [
-//   {
-//     id: 1,
-//     name: "Mathematics",
-//     code: "MATH",
-//   },
-//   {
-//     id: 2,
-//     name: "Computer Science",
-//     code: "CS",
-//   },
-//   {
-//     id: 3,
-//     name: "Physics",
-//     code: "PHY",
-//   },
-//   {
-//     id: 4,
-//     name: "Chemistry",
-//     code: "CHEM",
-//   },
-// ];
-
-export const MOCK_SUBJECTS: Subject[] = [
-  {
-    id: 1,
-    name: "Introduction to Computer Science",
-    code: "CS101",
-    department: "Computer Science",
-    description:
-      "Fundamental concepts of computing, programming basics, and problem-solving techniques.",
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: 2,
-    name: "Calculus I",
-    code: "MATH101",
-    department: "Mathematics",
-    description:
-      "Limits, derivatives, and integrals of single-variable functions with applications.",
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: 3,
-    name: "Introduction to Electrical Engineering",
-    code: "EE110",
-    department: "Electrical Engineering",
-    description:
-      "Basic circuit theory, signals, and an overview of electrical systems and devices.",
-    createdAt: new Date().toISOString(),
-  },
-];

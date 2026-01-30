@@ -25,45 +25,44 @@ export type ListResponse<T = unknown> = {
 //   data?: T;
 // };
 
-// declare global {
-//   interface CloudinaryUploadWidgetResults {
-//     event: string;
-//     info: {
-//       secure_url: string;
-//       public_id: string;
-//       delete_token?: string;
-//       resource_type: string;
-//       original_filename: string;
-//     };
-//   }
+declare global {
+  interface CloudinaryWidget {
+    open: () => void;
+  }
 
-//   interface CloudinaryWidget {
-//     open: () => void;
-//   }
+  interface CloudinaryUploadWidgetResults {
+    event: string;
+    info: {
+      secure_url: string;
+      public_id: string;
+      delete_token?: string;
+      resource_type: string;
+      original_filename: string;
+    };
+  }
+  interface Window {
+    cloudinary?: {
+      createUploadWidget: (
+        options: Record<string, unknown>,
+        callback: (
+          error: unknown,
+          result: CloudinaryUploadWidgetResults,
+        ) => void,
+      ) => CloudinaryWidget;
+    };
+  }
+}
 
-//   interface Window {
-//     cloudinary?: {
-//       createUploadWidget: (
-//         options: Record<string, unknown>,
-//         callback: (
-//           error: unknown,
-//           result: CloudinaryUploadWidgetResults,
-//         ) => void,
-//       ) => CloudinaryWidget;
-//     };
-//   }
-// }
+export interface UploadWidgetValue {
+  url: string;
+  publicId: string;
+}
 
-// export interface UploadWidgetValue {
-//   url: string;
-//   publicId: string;
-// }
-
-// export interface UploadWidgetProps {
-//   value?: UploadWidgetValue | null;
-//   onChange?: (value: UploadWidgetValue | null) => void;
-//   disabled?: boolean;
-// }
+export interface UploadWidgetProps {
+  value?: UploadWidgetValue | null;
+  onChange?: (value: UploadWidgetValue | null) => void;
+  disabled?: boolean;
+}
 
 // export enum UserRole {
 //   STUDENT = "student",
